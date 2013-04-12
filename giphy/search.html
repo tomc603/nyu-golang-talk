@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font: 64px "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type=text] {
+  width: 400px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+}
+
+</style>
+<body>
+<form action="/search">
+  <input type="text" name="q" value="{{.Query}}">
+  <input type="submit" value="Search">
+</form>
+{{range .Data}}
+<a target="_BLANK" href="{{.BitlyGifURL}}"><img src="{{.ImageFixedHeightURL}}"/></a>
+{{end}}
