@@ -55,6 +55,7 @@ func handleSearch(w http.ResponseWriter, req *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+
 	giphyResponse.Query = search
 	t := template.Must(template.ParseFiles("search.html"))
 	if err := t.Execute(w, giphyResponse); err != nil {
